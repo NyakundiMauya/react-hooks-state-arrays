@@ -6,7 +6,13 @@ function SpicyFoodList() {
 
   function handleAddFood() {
     const newFood = getNewRandomSpicyFood();
+    const newFoodArray = [...foods, newFood];
+    setFoods(newFoodArray);
     console.log(newFood);
+  }
+  function handleLiClick(id) {
+    const newFoodArray = foods.filter((food) => food.id !== id);
+    setFoods(newFoodArray);
   }
 
   const foodList = foods.map((food) => (
